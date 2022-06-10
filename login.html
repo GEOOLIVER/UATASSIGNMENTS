@@ -1,0 +1,57 @@
+<!--Geoffrey Oliver-->
+<!DOCTYPE html>
+<html>
+    <script>
+        
+//Checking login credentials
+function checkCreds() {
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var badgeNumber = document.getElementById("badgeNumber").value;
+    if (firstName.length > 20 || firstName.length < 2) {
+    // if (firstName.length > 20 || lfirstName.length < 2) then it fails
+          document.getElementById("loginStatus").innerHTML = "First name has invalid number of characters!";
+    } 
+    // if (lastName.length > 20 || lastName.length < 2) then it fails
+    else if (lastName.length > 20 || lastName.length < 2) {
+        document.getElementById("loginStatus").innerHTML = "Last Name has invalid number of characters!";
+    }
+    // if (badgeNumber.length > 20 || badgeNumber.length < 3) then it fails
+    else if (badgeNumber.length > 3 || badgeNumber.length < 3) {
+        document.getElementById("loginStatus").innerHTML = "Badge number is  an invalid number!";
+    }
+    else
+    //if all parameters are met correctly
+    {
+        alert("Access Granted!");
+    }
+        
+    }
+
+    </script>
+    <!-- I did just use the files here-->
+    <link href="loginStyle.css" rel="stylesheet" type="text/css" />
+    <head>
+        <title>UAT Space Login</title>
+    </head>
+
+    <body>
+        <h1>
+            Welcome to UAT Space Program
+        </h1>
+        <br>
+        <!--This will show if the login fails-->
+        <p id="loginStatus" class="loginID">Status of login...</p>
+        <br>
+        <!-- These are the boxes with inputs-->
+        <form id="credSubmit" onsubmit="return false">
+            First Name:     <input type="text" id="firstName" /> <br>
+            Last Name:      <input type="text" id="lastName" /> <br>
+            Badge Number:   <input type="number" id="badgeNumber" /> <br>
+            <!--Once clicked, this will evaluate that the parameters are met.-->
+            <input type="submit" onclick="checkCreds();" />
+        </form>
+        
+    </body>
+
+</html>
